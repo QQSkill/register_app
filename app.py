@@ -32,7 +32,8 @@ def upload_file():
             print('No file part')
         file = request.files['file']
         print(file)
-        s3 = boto3.resource('s3')
+        session = boto3.Session(profile_name='default')
+        s3 = session.resource('s3')
         # Upload a new file
         #data = open('test.jpg', 'rb')
         file = request.files['file']
