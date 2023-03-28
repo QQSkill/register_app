@@ -28,8 +28,11 @@ def upload_file():
             print('No file part')
         file = request.files['file']
         print(file)
-        session = boto3.Session(profile_name='default')
-        s3 = session.client('s3')
+        s3 = boto3.client(
+            's3',
+            aws_access_key_id='AKIAQ3ZNIJYG2VTHUGWD',
+            aws_secret_access_key='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'
+        )
         # Upload a new file
         #data = open('test.jpg', 'rb')
         file = request.files['file']
