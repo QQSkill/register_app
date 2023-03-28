@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 import mysql.connector
 import boto3
+import os
+
+os.environ['AWS_PROFILE'] = "default"
+os.environ['AWS_DEFAULT_REGION'] = "us-east-1"
 #from flask.ext.mysql import MySQL
 
 #from werkzeug import generate_password_hash, check_password_hash
