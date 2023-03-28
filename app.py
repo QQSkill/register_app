@@ -36,7 +36,8 @@ def upload_file():
         # Upload a new file
         #data = open('test.jpg', 'rb')
         file = request.files['file']
-        s3.Bucket('image-hung-001').put_object(Key=file.filename, Body=file)
+        s3.upload_fileobj(file, 'image-hung-001', file.filename)
+        #s3.Bucket('image-hung-001').put_object(Key=file.filename, Body=file)
         return json.dumps({'html':'<span>Successfully upload avatar</span>'})
 
 @app.route('/signUp',methods=['POST'])
