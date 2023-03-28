@@ -2,14 +2,6 @@ from flask import Flask, render_template, request
 import mysql.connector
 import boto3
 import os
-
-os.environ['AWS_PROFILE'] = "default"
-os.environ['AWS_DEFAULT_REGION'] = "us-east-1"
-#from flask.ext.mysql import MySQL
-
-#from werkzeug import generate_password_hash, check_password_hash
-
-
 import json
 
 app = Flask(__name__)
@@ -36,7 +28,8 @@ def upload_file():
             print('No file part')
         file = request.files['file']
         print(file)
-        s3 = boto3.client('s3')
+        session = boto3.Session(profile_name='default')
+        s3 = session.client('s3')
         # Upload a new file
         #data = open('test.jpg', 'rb')
         file = request.files['file']
