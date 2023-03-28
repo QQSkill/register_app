@@ -1,3 +1,3 @@
 # register_app
 
-![image](https://user-images.githubusercontent.com/35594088/228155151-2818b27d-130f-4884-a661-5f683278b74b.png)
+![image](https://user-images.githubusercontent.com/35594088/228155399-66befdbf-d919-4fe4-a5d0-2a3305302bd3.png)
