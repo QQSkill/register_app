@@ -20,6 +20,7 @@ def main():
 def showSignUp():
     return render_template('signup.html')
 
+#Upload file from client to s3 bucket - now using hard coded key for credentials aws iam user
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -40,6 +41,7 @@ def upload_file():
         #s3.Bucket('image-hung-001').put_object(Key=file.filename, Body=file)
         return json.dumps({'html':'<span>Successfully upload avatar</span>'})
 
+#Insert into RDS service (mysql db)
 @app.route('/signUp',methods=['POST'])
 def signUp():
     # read the posted values from the UI 
