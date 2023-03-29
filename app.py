@@ -31,8 +31,8 @@ def upload_file():
         print(file)
         s3 = boto3.client(
             's3',
-            aws_access_key_id='AKIAQ3ZNIJYG2VTHUGWD',
-            aws_secret_access_key='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'
+            aws_access_key_id='XXXXXXXXXXXXXXXXXX',
+            aws_secret_access_key='XXXXXXXXXXXXXXXXXXXXX'
         )
         # Upload a new file
         #data = open('test.jpg', 'rb')
